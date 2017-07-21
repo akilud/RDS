@@ -31,9 +31,15 @@ export class MapPage {
 
 
   updateLocation(){
+      //first get inaccurate location quickly
       navigator.geolocation.getCurrentPosition((success)=> {
           this.loadMap(success.coords)
       },(err)=> {console.warn(err)});
+
+      //then get more accurate location
+      navigator.geolocation.getCurrentPosition((success)=> {
+          this.loadMap(success.coords)
+      },(err)=> {console.warn(err)},{enableHighAccuracy: true});
   }
   
 
@@ -67,13 +73,13 @@ export class MapPage {
 
 
 
-  createMarker(pos, map, title){
-    var marker = new google.maps.Marker({
-      position: pos,
-      map: map,
-      title: title
-    });
-  }
+  // createMarker(pos, map, title){
+  //   var marker = new google.maps.Marker({
+  //     position: pos,
+  //     map: map,
+  //     title: title
+  //   });
+  // }
 
 
 
@@ -88,7 +94,6 @@ export class MapPage {
     },(response, status)=> {
       if (status === 'OK') {
         directionsDisplay.setDirections(response);
-        console.log(this.map)
         directionsDisplay.setMap(this.map);
       } else {
         window.alert('Directions request failed due to ' + status);
