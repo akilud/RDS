@@ -2,6 +2,7 @@ page-map {
   #parent{
     position:absolute;
     height:100%;
+    max-height:100%;
     margin:0;
     padding:0;
     width:100%;
@@ -19,7 +20,19 @@ page-map {
     width:100%;
 }
 
-#resize{
+#down{
+	position:absolute;
+	top:-10%;
+	left:20%;
+}
+
+#up{
+	position:absolute;
+	top:-10%;
+	right:20%;
+}
+
+.centerButton{
 	position:absolute;
 	top:-10%;
 	left:45%;

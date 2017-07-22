@@ -26,9 +26,30 @@
   <div id="parent">
    <div #map id="map"></div> 
     <div #directions id="directions">
-      <button ion-button icon-only #resize id="resize" (click)="biggerMap()">
-        <ion-icon class="ion-arrow-up-c" name="ion-arrow-up-c"></ion-icon>
+      
+      <button ion-button icon-only #up id="up" (click)="smallerMap()" *ngIf="isCenterMap">
+      <ion-icon name="arrow-round-up"></ion-icon>
       </button>
+      
+
+      <button ion-button icon-only #down id="down" (click)="biggerMap()" *ngIf="isCenterMap">
+      <ion-icon name="arrow-round-down"></ion-icon>
+      </button>
+
+
+      <button ion-button icon-only class="centerButton" (click)="centerMap()" *ngIf="isBiggerMap">
+      <ion-icon name="arrow-round-up"></ion-icon>
+      </button>
+      
+
+      <button ion-button icon-only class="centerButton" (click)="centerMap()" *ngIf="isSmallerMap">
+      <ion-icon name="arrow-round-down"></ion-icon>
+      </button>
+
+      
+
+      
+
     </div> 
   </div>
 </ion-content>

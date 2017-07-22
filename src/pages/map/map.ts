@@ -14,7 +14,10 @@ export class MapPage {
   
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  
+    
+  isBiggerMap = false;
+  isSmallerMap = false;
+  isCenterMap = true;  
 
 
   
@@ -31,7 +34,7 @@ export class MapPage {
 
 
   resizeDivs(){
-
+      $("#map").resizable();
       $('#map').resize(() => {
           $('#directions').height($("#parent").height() - $("#map").height());
       });
@@ -44,12 +47,24 @@ export class MapPage {
 
 
   biggerMap(){
-    
-    $("#directions").toggle(()=>{
-      $("#directions").animate({height:500},200);
-    },()=>{
-      $("#directions").animate({height:250},200);
-    });
+      $("#map").animate({height:"75%"},200);
+      this.isBiggerMap = true;
+      this.isSmallerMap = false;
+      this.isCenterMap = false;
+  }
+
+  smallerMap() {
+      $("#map").animate({ height: "25%" }, 200);
+      this.isBiggerMap = false;
+      this.isSmallerMap = true;
+      this.isCenterMap = false;
+  }
+
+  centerMap(){
+      $("#map").animate({ height: "50%" }, 200);
+      this.isBiggerMap = false;
+      this.isSmallerMap = false;
+      this.isCenterMap = true;   
   }
 
 
