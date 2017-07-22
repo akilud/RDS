@@ -31,16 +31,25 @@ export class MapPage {
 
 
   resizeDivs(){
-      $("#map").resizable();
+
       $('#map').resize(() => {
-          alert('hi')
           $('#directions').height($("#parent").height() - $("#map").height());
       });
       $(window).resize(() => {
-          alert('ws')
           $('#directions').height($("#parent").height() - $("#map").height());
           $('#map').width($("#parent").width());
       });
+  }
+
+
+
+  biggerMap(){
+    
+    $("#directions").toggle(()=>{
+      $("#directions").animate({height:500},200);
+    },()=>{
+      $("#directions").animate({height:250},200);
+    });
   }
 
 

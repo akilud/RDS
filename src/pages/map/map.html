@@ -26,10 +26,9 @@
   <div id="parent">
    <div #map id="map"></div> 
     <div #directions id="directions">
-      <button ion-button icon-only #resize id="resize">
-        <ion-icon name="options"></ion-icon>
+      <button ion-button icon-only #resize id="resize" (click)="biggerMap()">
+        <ion-icon class="ion-arrow-up-c" name="ion-arrow-up-c"></ion-icon>
       </button>
     </div> 
   </div>
-  <!-- <div #map id="map"></div>   -->
 </ion-content>

@@ -17,13 +17,11 @@ page-map {
     float:left;
     height:50%;
     width:100%;
-    border: 2px solid black;
-    pointer:ne-resize;
 }
 
 #resize{
 	position:absolute;
-	top:0px;
+	top:-10%;
 	left:45%;
 }
 
