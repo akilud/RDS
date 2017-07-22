@@ -22,7 +22,7 @@ export class MapPage {
 
   constructor(private googleMaps: GoogleMaps, public navCtrl: NavController, public platform: Platform) { }
 
-  
+
 
   ngAfterViewInit() {
       this.updateLocation();
@@ -34,12 +34,20 @@ export class MapPage {
       //first get inaccurate location quickly
       navigator.geolocation.getCurrentPosition((success)=> {
           this.loadMap(success.coords)
-      },(err)=> {console.warn(err)});
+      },(err)=> {
+          console.warn(err)
+          let tmpSource = { latitude: 12.9336518, longitude: 77.6123075};
+                   this.loadMap(tmpSource);
+      });
 
       //then get more accurate location
       navigator.geolocation.getCurrentPosition((success)=> {
           this.loadMap(success.coords)
-      },(err)=> {console.warn(err)},{enableHighAccuracy: true});
+      },(err)=> {
+          console.warn(err)
+      },{
+          enableHighAccuracy: true
+      });
   }
   
 
