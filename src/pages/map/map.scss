@@ -1,8 +1,30 @@
 page-map {
-  #map {
-    width: 100%;
-    height: 100%;
-  }
-  //opacity: 0;
-  //transition: opacity 150ms ease-in
+  #parent{
+    position:absolute;
+    height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+#map{
+    position:relative;
+    float:left;
+    height:50%;
+    width:100%;
+}
+#directions{
+    position:relative;
+    float:left;
+    height:50%;
+    width:100%;
+    border: 2px solid black;
+    pointer:ne-resize;
+}
+
+#resize{
+	position:absolute;
+	top:0px;
+	left:45%;
+}
+
 }

@@ -4,7 +4,7 @@ import { NavController, Platform } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition } from '@ionic-native/google-maps';
 
 declare var google: any;
-
+declare var $: any;
 
 @Component({
   selector: 'page-map',
@@ -12,7 +12,6 @@ declare var google: any;
 })
 export class MapPage {
   
-  // @ViewChild('map') map;
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   
@@ -23,10 +22,25 @@ export class MapPage {
   constructor(private googleMaps: GoogleMaps, public navCtrl: NavController, public platform: Platform) { }
 
 
-
   ngAfterViewInit() {
       this.updateLocation();
+      this.resizeDivs();
       
+  }
+
+
+
+  resizeDivs(){
+      $("#map").resizable();
+      $('#map').resize(() => {
+          alert('hi')
+          $('#directions').height($("#parent").height() - $("#map").height());
+      });
+      $(window).resize(() => {
+          alert('ws')
+          $('#directions').height($("#parent").height() - $("#map").height());
+          $('#map').width($("#parent").width());
+      });
   }
 
 

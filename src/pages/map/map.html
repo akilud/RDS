@@ -23,5 +23,13 @@
 
  
 <ion-content>
-  <div #map id="map"></div>  
+  <div id="parent">
+   <div #map id="map"></div> 
+    <div #directions id="directions">
+      <button ion-button icon-only #resize id="resize">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </div> 
+  </div>
+  <!-- <div #map id="map"></div>   -->
 </ion-content>
