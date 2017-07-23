@@ -84,7 +84,7 @@ export class Drivers {
     ];
 
     for (let driver of drivers) {
-      this.drivers.push(new driver(driver));
+      this.drivers.push(new Driver(driver));
     }
   }
 
@@ -106,11 +106,11 @@ export class Drivers {
     });
   }
 
-  add(driver: driver) {
+  add(driver: Driver) {
     this.drivers.push(driver);
   }
 
-  delete(driver: driver) {
+  delete(driver: Driver) {
     this.drivers.splice(this.drivers.indexOf(driver), 1);
   }
 }

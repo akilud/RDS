@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { LoginPage } from '../login/login';
-import { SignupPage } from '../signup/signup';
+import { CardsPage } from '../cards/cards';
+import { DriversPage } from '../drivers/drivers';
+import { MapPage } from '../map/map';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -18,11 +19,15 @@ export class WelcomePage {
 
   constructor(public navCtrl: NavController) { }
 
-  login() {
-    this.navCtrl.push(LoginPage);
+  viewTeams() {
+    this.navCtrl.push(CardsPage);
   }
 
-  signup() {
-    this.navCtrl.push(SignupPage);
+  viewDrivers() {
+    this.navCtrl.push(DriversPage);
+  }
+
+  getDirections(){
+	  this.navCtrl.push(MapPage);
   }
 }

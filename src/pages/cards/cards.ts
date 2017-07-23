@@ -6,38 +6,58 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'cards.html'
 })
 export class CardsPage {
-  cardItems: any[];
+  teams: any[];
 
   constructor(public navCtrl: NavController) {
-    this.cardItems = [
+    this.teams = [
       {
-        user: {
-          avatar: 'assets/img/marty-avatar.png',
-          name: 'Marty McFly'
-        },
-        date: 'November 5, 1955',
-        image: 'assets/img/advance-card-bttf.png',
-        content: 'Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.',
+        "name": "RENAULT E.DAMS",
+        "profilePic": "http://www.fiaformulae.com/img/flags/fr.svg",
+        "points": "259",
+        "car": "https://www.motorsportweek.com/ckfinder/userfiles/images/FormulaE/renault_formula_e_studio-f3-4-2.jpg"
       },
       {
-        user: {
-          avatar: 'assets/img/sarah-avatar.png.jpeg',
-          name: 'Sarah Connor'
-        },
-        date: 'May 12, 1984',
-        image: 'assets/img/advance-card-tmntr.jpg',
-        content: 'I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.'
-      },
-      {
-        user: {
-          avatar: 'assets/img/ian-avatar.png',
-          name: 'Dr. Ian Malcolm'
-        },
-        date: 'June 28, 1990',
-        image: 'assets/img/advance-card-jp.jpg',
-        content: 'Your scientists were so preoccupied with whether or not they could, that they didn\'t stop to think if they should.'
+        "name": "ABT SCHAEFFLER AUDI SPORT  ",
+        "profilePic": "http://www.fiaformulae.com/img/flags/de.svg",
+        "points": "194",
+        "car": "http://current-e.com/wp-content/uploads/2016/09/ABT-Schaeffler-Audi-Sport-Formula-E-factory-announcement-2016-front-profile.jpg"
+      }, {
+        "name": "MAHINDRA RACING",
+        "profilePic": "http://www.fiaformulae.com/img/flags/in.svg",
+        "points": "182",
+        "car": "http://www.mahindra.com/resources/images/press-release/Mahindra-Racing-invites-fans-to-design-racetrack-for-the-India-ePrix-Original.jpg"
+      }, {
+        "name": "DS VIRGIN RACING",
+        "profilePic": "http://www.fiaformulae.com/img/flags/gb.svg",
+        "points": "153",
+        "car":"https://www.ds-virginracing.com/wp-content/uploads/2015/10/DS-VR-Wallpaper2-1000x750.jpg"
       }
+      // , {
+      //   "name": "TECHEETAH",
+      //   "profilePic": "http://www.fiaformulae.com/img/flags/jp.svg",
+      //   "points": "94"
+      // }, {
+      //   "name": "NEXTEV NIO",
+      //   "profilePic": "http://www.fiaformulae.com/img/flags/jp.svg",
+      //   "points": "59"
+      // }, {
+      //   "name": "ANDRETTI FORMULA E",
+      //   "profilePic": "http://www.fiaformulae.com/img/flags/us.svg",
+      //   "points": "30"
+      // }, {
+      //   "name": "FARADAY FUTURE DRAGON RACING",
+      //   "profilePic": "http://www.fiaformulae.com/img/flags/us.svg",
+      //   "points": "30"
+      // }, {
+      //   "name": "VENTURI FORMULA E",
+      //   "profilePic": "http://www.fiaformulae.com/img/flags/mc.svg",
+      //   "points": "28"
+      // },
+      // {
+      //   "name": "PANASONIC JAGUAR RACING",
+      //   "profilePic": "http://www.fiaformulae.com/img/flags/gb.svg",
+      //   "points": "21"
+      // }
     ];
-
   }
 }

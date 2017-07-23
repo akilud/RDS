@@ -20,18 +20,19 @@
 
 
 
-<ion-content>
+<ion-content class="darkback">
 
-  <ion-card *ngFor="let team of teams">
+  <ion-card *ngFor="let driver of drivers">
+  
     <ion-item>
       <ion-avatar item-start>
-        <img [src]="team.profilePic">
+        <img [src]="driver.countryPic">
       </ion-avatar>
-      <h2>{{team.name}}</h2>
-      <!-- <p>{{item.date}}</p> -->
+      <h1>{{driver.name}}</h1>
+      <p>{{driver.team}}</p>
     </ion-item>
 
-    <img [src]="team.car">
+    <img [src]="driver.profilePic">
 
     <ion-card-content>
       <!-- <p>{{item.content}}</p> -->

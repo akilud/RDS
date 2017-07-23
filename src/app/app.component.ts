@@ -12,7 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { MapPage } from '../pages/map/map';
 import { MenuPage } from '../pages/menu/menu';
 import { SearchPage } from '../pages/search/search';
-import { SettingsPage } from '../pages/settings/settings';
+import { DriversPage } from '../pages/drivers/drivers';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
@@ -26,7 +26,7 @@ import { TranslateService } from '@ngx-translate/core'
   template: `<ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Pages</ion-title>
+        <ion-title>RACE DAY</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -47,18 +47,18 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Tutorial', component: TutorialPage },
-    { title: 'Welcome', component: WelcomePage },
-    { title: 'Tabs', component: TabsPage },
-    { title: 'Cards', component: CardsPage },
-    { title: 'Content', component: ContentPage },
-    { title: 'Login', component: LoginPage },
-    { title: 'Signup', component: SignupPage },
-    { title: 'Map', component: MapPage },
-    { title: 'Master Detail', component: ListMasterPage },
-    { title: 'Menu', component: MenuPage },
-    { title: 'Settings', component: SettingsPage },
-    { title: 'Search', component: SearchPage }
+    // { title: 'Tutorial', component: TutorialPage },
+    { title: 'Home', component: WelcomePage },
+    // { title: 'Tabs', component: TabsPage },
+    { title: 'Teams', component: CardsPage },
+    // { title: 'Content', component: ContentPage },
+    // { title: 'Login', component: LoginPage },
+    // { title: 'Signup', component: SignupPage },
+    { title: 'Directions', component: MapPage },
+    // { title: 'Master Detail', component: ListMasterPage },
+    // { title: 'Menu', component: MenuPage },
+    { title: 'Drivers', component: DriversPage }
+    // { title: 'Search', component: SearchPage }
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

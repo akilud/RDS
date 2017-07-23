@@ -10,9 +10,16 @@ page-map {
 #map{
     position:relative;
     float:left;
-    height:50%;
+    height:100%;
     width:100%;
 }
+
+#mapButton{
+    position:fixed;
+    left:30%;
+    bottom:15%;
+}
+
 #directions{
     position:relative;
     float:left;

@@ -1,13 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      Race Day
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
 <ion-content scroll="false">
   <div class="splash-bg"></div>
   <div class="splash-info">
     <div class="splash-logo"></div>
-    <div class="splash-intro">
+    <!-- <div class="splash-intro">
       {{ 'WELCOME_INTRO' | translate }}
-    </div>
+    </div> -->
   </div>
-  <div padding>
-    <button ion-button block (click)="signup()" class="signup">{{ 'SIGNUP' | translate }}</button>
-    <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+  <div class="buttons">
+    <button ion-button full class="startButton" (click)="getDirections()">Get Directions</button>
+    <button ion-button full class="startButton" (click)="viewTeams()">View Teams </button>
+    <button ion-button full class="startButton" (click)="viewDrivers()">View Drivers</button>
   </div>
 </ion-content>

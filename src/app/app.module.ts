@@ -15,7 +15,7 @@ import { LoginPage } from '../pages/login/login';
 import { MapPage } from '../pages/map/map';
 import { MenuPage } from '../pages/menu/menu';
 import { SearchPage } from '../pages/search/search';
-import { SettingsPage } from '../pages/settings/settings';
+import { DriversPage } from '../pages/drivers/drivers';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
@@ -67,7 +67,7 @@ export function provideSettings(storage: Storage) {
     MapPage,
     MenuPage,
     SearchPage,
-    SettingsPage,
+    DriversPage,
     SignupPage,
     TabsPage,
     TutorialPage,
@@ -98,7 +98,7 @@ export function provideSettings(storage: Storage) {
     MapPage,
     MenuPage,
     SearchPage,
-    SettingsPage,
+    DriversPage,
     SignupPage,
     TabsPage,
     TutorialPage,

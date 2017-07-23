@@ -14,10 +14,14 @@ export class MapPage {
   
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+
     
   isBiggerMap = false;
   isSmallerMap = false;
-  isCenterMap = true;  
+  isCenterMap = true; 
+
+  directionsArr = [];
+
 
 
   
@@ -27,44 +31,49 @@ export class MapPage {
 
   ngAfterViewInit() {
       this.updateLocation();
-      this.resizeDivs();
+      // this.resizeDivs();
       
   }
 
 
 
-  resizeDivs(){
-      $("#map").resizable();
-      $('#map').resize(() => {
-          $('#directions').height($("#parent").height() - $("#map").height());
-      });
-      $(window).resize(() => {
-          $('#directions').height($("#parent").height() - $("#map").height());
-          $('#map').width($("#parent").width());
-      });
-  }
+  // resizeDivs(){
+  //     $("#map").resizable();
+  //     $('#map').resize(() => {
+  //         $('#directions').height($("#parent").height() - $("#map").height());
+  //     });
+  //     $(window).resize(() => {
+  //         $('#directions').height($("#parent").height() - $("#map").height());
+  //         $('#map').width($("#parent").width());
+  //     });
+  // }
 
 
 
-  biggerMap(){
-      $("#map").animate({height:"75%"},200);
-      this.isBiggerMap = true;
-      this.isSmallerMap = false;
-      this.isCenterMap = false;
-  }
+  // biggerMap(){
+  //     $("#map").animate({height:"75%"},200);
+  //     this.isBiggerMap = true;
+  //     this.isSmallerMap = false;
+  //     this.isCenterMap = false;
+  // }
 
-  smallerMap() {
-      $("#map").animate({ height: "25%" }, 200);
-      this.isBiggerMap = false;
-      this.isSmallerMap = true;
-      this.isCenterMap = false;
-  }
+  // smallerMap() {
+  //     $("#map").animate({ height: "25%" }, 200);
+  //     this.isBiggerMap = false;
+  //     this.isSmallerMap = true;
+  //     this.isCenterMap = false;
+  // }
 
-  centerMap(){
-      $("#map").animate({ height: "50%" }, 200);
-      this.isBiggerMap = false;
-      this.isSmallerMap = false;
-      this.isCenterMap = true;   
+  // centerMap(){
+  //     $("#map").animate({ height: "50%" }, 200);
+  //     this.isBiggerMap = false;
+  //     this.isSmallerMap = false;
+  //     this.isCenterMap = true;   
+  // }
+
+
+  openMaps(){
+    (<any>window).location = 'comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic'
   }
 
 
@@ -141,11 +150,22 @@ export class MapPage {
       console.warn(response)  
 
       if (status === 'OK') {
+
+        this.directionsArr = [];  
         directionsDisplay.setDirections(response);
         directionsDisplay.setMap(this.map);
+
+        var directions = response.routes[0].legs[0].steps;
+
+        directions.forEach((step)=>{
+            this.directionsArr.push(step.instructions)
+        })
+
+
       } else {
-        window.alert('Directions request failed due to ' + status);
+        console.log('Directions request failed due to ' + status);
       }
+      console.log(this.directionsArr)
     });
   }
 

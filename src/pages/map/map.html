@@ -25,7 +25,9 @@
 <ion-content>
   <div id="parent">
    <div #map id="map"></div> 
-    <div #directions id="directions">
+
+   <button ion-button round color="secondary" onclick="window.open('http://maps.google.com/?q=Vidhna Soudha')" id="mapButton">View on Maps</button>
+    <!-- <div #directions id="directions">
       
       <button ion-button icon-only #up id="up" (click)="smallerMap()" *ngIf="isCenterMap">
       <ion-icon name="arrow-round-up"></ion-icon>
@@ -46,10 +48,12 @@
       <ion-icon name="arrow-round-down"></ion-icon>
       </button>
 
-      
+      <button ion-button round color="secondary" (click)="openMaps()">View on Maps</button>
 
       
 
-    </div> 
+      
+
+    </div>  -->
   </div>
 </ion-content>
