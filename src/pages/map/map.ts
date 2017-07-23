@@ -138,6 +138,8 @@ export class MapPage {
       destination: destination,
       travelMode: 'DRIVING'
     },(response, status)=> {
+      console.warn(response)  
+
       if (status === 'OK') {
         directionsDisplay.setDirections(response);
         directionsDisplay.setMap(this.map);
